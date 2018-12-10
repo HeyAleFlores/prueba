@@ -1,0 +1,103 @@
+﻿@model IEnumerable<LINQEjemplo.Models.Registros>
+@{
+    ViewBag.Title = "Index";
+}
+
+<form action="/" method="post">
+    <div>
+        <label for="inputState">Filtar</label>
+        <select name="filtro" id="inputState" class="form-control" >
+            <option value="nombre">Nombre</option>
+            <option value="materia">Materia</option>
+            <option value="promedio">Promedio</option>
+        </select>
+    </div>
+    
+    <div class="form-group mb-2">
+      
+        <input type="text" placeholder="buscar" name="busqueda" data-searh>
+    </div>
+
+    <button type="submit" class="btn btn-link">Buscar</button>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-offset-2 jumbotron">
+                <p>Resultados</p>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Carnet</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Materia</th>
+                            <th scope="col">Promedio</th>
+                            <th scope="col">Fecha</th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tr scope="row">
+                            <td scope="row">@item.Carnet</td>
+                            <td scope="row">@item.Nombre</td>
+                            <td scope="row">@item.Materia</td>
+                            <td scope="row">@item.Promedio</td>
+                            <td scope="row">@item.Fecha</td>
+                        </tr>
+                    }
+                </table>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+@*<form action="/" method="post">
+    <input type="text" class="form-control" name="Busqueda" placeholder="Buscar materia" />
+    <input type="submit" class="btn btn-default" />
+</form>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-sm-offset-2 jumbotron">
+            <p>Resultados</p>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Carnet</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Materia</th>
+                        <th scope="col">Promedio</th>
+                        <th scope="col">Fecha</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr scope="row">
+                        <td scope="row">@item.Carnet</td>
+                        <td scope="row">@item.Nombre</td>
+                        <td scope="row">@item.Materia</td>
+                        <td scope="row">@item.Promedio</td>
+                        <td scope="row">@item.Fecha</td>
+                    </tr>
+                }
+            </table>
+
+        </div>
+
+    </div>
+</div>*@
